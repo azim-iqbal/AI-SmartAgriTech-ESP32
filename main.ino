@@ -1,3 +1,4 @@
+//The whole code needs to be pasted in Arduino IDE with proper setup of ESP32
 #define BLYNK_PRINT Serial
 #define BLYNK_TEMPLATE_ID ""
 #define BLYNK_TEMPLATE_NAME "smart farm"
