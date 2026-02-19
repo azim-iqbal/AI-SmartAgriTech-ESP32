@@ -10,6 +10,7 @@
 #include <WiFiClientSecure.h>
 #include <ArduinoJson.h>
 
+//wiFi Username and Password
 char ssid[] = "";
 char pass[] = "";
 
