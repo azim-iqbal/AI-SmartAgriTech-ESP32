@@ -38,13 +38,57 @@ ESP32 → Sensor Data Collection
 → Groq AI API (Analysis)
 → Telegram Bot (Alerts & AI Advice)
 
+API documentation:
+->> Groq AI API-
+Used for generating intelligent irrigation advice.
+
+Endpoint:
+POST https://api.groq.com/openai/v1/chat/completions
+
+Headers:
+Content-Type: application/json
+Authorization: Bearer YOUR_GROQ_API_KEY
+
+Request Body Example:
+{
+  "model": "llama-3.1-8b-instant",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Soil moisture is 45%, temperature is 28C. Give irrigation advice."
+    }
+  ]
+}
+
+Response Format:
+{
+  "choices": [
+   {
+      "message": {
+        "content": "Soil moisture is adequate. Irrigation not required today."
+      }
+    }
+  ]
+}
+
+->> Telegram Bot API-
+Used for sending real-time alerts and AI recommendations.
+
+Endpoint:
+POST https://api.telegram.org/bot<token>/sendMessage
+
+Parameters:
+chat_id
+text
+Example:
+chat_id=123456789
+text=Motion detected in farm
+
 Hardware Components:
 -> ESP32
 -> Soil Moisture Sensor
 -> DHT11 Sensor
 -> PIR Motion Sensor
 -> Relay Module
-
-Jumper Wires
-
-Power Supply
+-> Jumper Wires
+-> Power Supply
